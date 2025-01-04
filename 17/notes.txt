@@ -1,0 +1,28 @@
+1st move 24
+b = initialA%8 = initialA&7
+2nd move 15
+b = b^5 = initialA&7^5
+3rd move 75
+c = initialA/b = initialA/(2 pow b) = initialA/(2 pow initialA&7^5) 
+4th move 16
+b = b^6 = initialA&7^5^6
+5th move 43
+b = b^c = (initialA&7^5^6) ^ (initialA/(2 pow initialA&7^5))
+6th move 55
+out b%8 = b&7 = ((initialA&7^5^6) ^ (initialA/(2 pow initialA&7^5))) & 7
+7th move 03
+a = a / (2pow3) = a/8 = a >> 3
+to output 16 numbers a has to be > 8^7? = 2097152
+8th move 30
+go back to start
+
+((initialA&7^5^6) ^ (initialA/(2 pow initialA&7^5))) & 7 == 2
+
+2 = 0000 0010
+5 = 0000 0101
+6 = 0000 0110
+
+
+second run
+a = initlaA / 8
+((a&7^5^6) ^ (a/(2 pow a&7^5))) & 7 == 2
